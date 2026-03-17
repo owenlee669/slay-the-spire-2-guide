@@ -2,6 +2,10 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { LOCALES } from '@/i18n/routing';
 
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Wiki - Complete Guide, Cards, Characters & Builds',
   description: 'The most comprehensive Slay the Spire 2 Wiki. 577+ cards, 24 relics, 63 potions. Complete character guides for Ironclad, Silent, Defect, Regent, and Necrobinder.',

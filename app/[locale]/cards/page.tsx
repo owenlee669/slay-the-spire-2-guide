@@ -2,6 +2,10 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { LOCALES } from '@/i18n/routing';
 
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Cards - Complete 577+ Card Database & Tier List',
   description: 'Browse all 577+ cards in Slay the Spire 2. Filter by character, type, rarity, and cost. Complete card guides with synergies, strategies, and tier rankings.',

@@ -2,6 +2,10 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { LOCALES } from '@/i18n/routing';
 
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Characters - Complete Character Guides & Builds',
   description: 'Complete guides for all 5 Slay the Spire 2 characters: The Regent, The Ironclad, The Silent, The Defect, and The Necrobinder. Learn their unique mechanics, best cards, and winning strategies.',
