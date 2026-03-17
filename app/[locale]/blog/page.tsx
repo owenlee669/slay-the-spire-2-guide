@@ -5,6 +5,10 @@ import { constructMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 type Params = Promise<{ locale: string }>;
 
 type MetadataProps = {
