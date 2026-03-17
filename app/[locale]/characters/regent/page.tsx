@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { LOCALES } from '@/i18n/routing';
 
 export const metadata: Metadata = {
   title: 'The Regent Guide - Slay the Spire 2 Character Build & Strategy',
@@ -11,6 +12,10 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export default function RegentPage() {
   return (

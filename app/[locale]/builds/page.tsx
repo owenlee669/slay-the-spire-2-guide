@@ -1,4 +1,9 @@
 import { Metadata } from 'next';
+import { LOCALES } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Builds - 11 Recommended Deck Builds',
@@ -101,6 +106,10 @@ const builds = [
     relics: ['Depends on build path'],
   },
 ];
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export default function BuildsPage() {
   return (

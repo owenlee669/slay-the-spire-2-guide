@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { LOCALES } from '@/i18n/routing';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Wiki - Complete Guide, Cards, Characters & Builds',
@@ -27,6 +28,10 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export default function Home() {
   return (

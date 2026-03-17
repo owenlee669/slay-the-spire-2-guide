@@ -1,4 +1,9 @@
 import { Metadata } from 'next';
+import { LOCALES } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Guides - Beginner to Ascension 20 Strategy',
@@ -52,6 +57,10 @@ const guides = [
     ],
   },
 ];
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export default function GuidesPage() {
   return (

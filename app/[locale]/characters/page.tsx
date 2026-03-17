@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { LOCALES } from '@/i18n/routing';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Characters - Complete Character Guides & Builds',
@@ -69,6 +70,10 @@ const characters = [
     bestFor: 'Players who enjoy high-risk, high-reward strategies',
   },
 ];
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export default function CharactersPage() {
   return (

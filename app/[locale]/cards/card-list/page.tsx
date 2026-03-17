@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { LOCALES } from '@/i18n/routing';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Card List - Complete Database of All 577+ Cards',
@@ -44,6 +45,10 @@ const types = [
   { name: 'Status', value: 'status', count: '30+' },
   { name: 'Curse', value: 'curse', count: '20+' },
 ];
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export default function CardListPage() {
   return (
